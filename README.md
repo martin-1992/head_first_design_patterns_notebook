@@ -1,4 +1,4 @@
-# head_first_design_patterns_notebook
+# head first 设计模式笔记
 
 
 ### 策略模式（Strategy Pattern）
