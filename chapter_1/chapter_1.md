@@ -5,7 +5,7 @@
 ### 问题
 　　原先有一个鸭子的超类，即 Duck，有两种方法。各种鸭子的子类继承该超类，如下：
   
-![image.png](attachment:image.png)
+![Aaron Swartz](https://raw.githubusercontent.com/martin-1992/head_first_design_patterns_notebook/master/chapter_1/chapter_1_p1.png)
 
 　　现在需要让部分鸭子会飞，解决方法如下：
 
@@ -21,14 +21,14 @@
 　　即鸭子的行为被封装在一组类中，此类专门提供某行为接口的实现，这样子类鸭子只需继承该行为类，不需要知道行为的实现细节。如果需要，还可以在运行时改变行为。<br />
 　　如下图， 一个会飞的接口，两个实现该接口的飞行行为类，部分不会飞的鸭子子类只需继承 FlyNoWay 行为类即可，如果以后不会飞的行为类有其它改动，只需在该行为类修改即可，这样实际的“实现”不会被绑死在鸭子的子类中。换句话说，特定的具体行为编写在实现了 FlyBehavior 与 QuakcBehavior 的类中。
   
-![image.png](attachment:image.png)
+![Aaron Swartz](https://raw.githubusercontent.com/martin-1992/head_first_design_patterns_notebook/master/chapter_1/chapter_1_p2.png)
 
 　　**这里“针对接口的编程”真正的意思是“针对超类型”编程。**其关键在于多态，利用多态，程序可以针对超类型编程，执行时会根据实际状况执行到真正的行为，不会被绑死在超类型的行为上。“针对超类型编程”这句话，可以更明确地说成“变量的声明类型应该是超类型，通常是一个抽象类或者是一个接口，如此，只要是具体实现此超类型的类所产生的对象，都可以指定给这个变量。这也意味着，声明类时不用理会以后执行时的真正对象类型。”
 
 ### 实现鸭子的行为
 　　有两个接口，FlyBehavior 和 QuackBehavior，还有它们对应的类，负责实现具体的行为：
   
-![image.png](attachment:image.png)
+![Aaron Swartz](https://raw.githubusercontent.com/martin-1992/head_first_design_patterns_notebook/master/chapter_1/chapter_1_p3.png)
 
 　　这样的设计，可以让飞行和呱呱叫的动作被其它的对象复用，因为这些行为已经与鸭子类无关了。而我们也可以新增一些行为，不会影响到既有的行为类，也不会影响“使用”到飞行行为的鸭子类。<br />
 　　**通过接口定义了不同的行为类，而子类通过继承不同的行为类，获得不同的方法。**避免继承超类的方法，导致相同的方法无法定义。
@@ -173,4 +173,4 @@ public class MiniDuckSimulator {
 - 设计原则，多用组合，少用继承。使用组合建立系统具有很大的弹性，不仅将算法族（行为类）封装成类，还可以动态改变行为，只要组合的行为对象符合正确的接口标准即可；
 - 良好的 OO 设计必须具备可复用、可扩充、可维护三个特性，我们常把系统中会变化的部分抽出来封装。
 
-![image.png](attachment:image.png)
+![Aaron Swartz](https://raw.githubusercontent.com/martin-1992/head_first_design_patterns_notebook/master/chapter_1/chapter_1_p4.png)
