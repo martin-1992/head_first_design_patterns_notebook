@@ -32,7 +32,11 @@
 
 ## 抽象工厂模式（Abstract Factory Pattern)
 
+## 单件模式（Singleton Pattern）
+　　确保类只有一个实例，常用于管理共享资源（数据库连接池、线程池）、缓存、对话框、处理偏好设置和注册表的对象、日志对象，这类对象只能有一个实例，多个实例会出问题。
 
+- 利用静态变量（比如 uniqueInstance）来记录该类的唯一实例；
+- 调用 getInstance() 创建实例，考虑到多线程的情况下，使用双重检查锁来判定实例是否创建，如没则创建实例，并赋值给 uniqueInstance 变量保存。如已创建，这直接放回 uniqueInstance 变量。
 
 
 
