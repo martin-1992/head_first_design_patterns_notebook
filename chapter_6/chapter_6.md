@@ -1,7 +1,6 @@
 
-### 命令模式
+## 命令模式（Command Pattern）
 　　封装调用，即把方法调用封装起来，调用此运算的对象不需要关心事情是如何进行的，只要知道如何使用包装成形的方法来完成即可。<br />
-　　以餐厅为例，用户
 
 ### 第一个命令对象
 
@@ -125,9 +124,7 @@ public class RemoteControl {
   
 ### 命令模式类图
 
-![image.png](attachment:image.png)
-
-![image.png](attachment:image.png)
+![Aaron Swartz](https://raw.githubusercontent.com/martin-1992/head_first_design_patterns_notebook/master/chapter_6/chapter_6_p1.png)
 
 ### 宏命令
 　　将一组命令对象放在一个数组里，然后遍历执行 execute() ，既可将命令对象全部执行。
