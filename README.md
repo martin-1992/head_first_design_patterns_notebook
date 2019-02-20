@@ -38,6 +38,27 @@
 - 利用静态变量（比如 uniqueInstance）来记录该类的唯一实例；
 - 调用 getInstance() 创建实例，考虑到多线程的情况下，使用双重检查锁来判定实例是否创建，如没则创建实例，并赋值给 uniqueInstance 变量保存。如已创建，这直接放回 uniqueInstance 变量。
 
+## 命令模式（Command Pattern）
+　　将对象的方法封装在一个命令对象的接口上，进行调用。命令模式用在队列请求中，队列不需要知道对象是谁，只要调用 execute() 即可。
+  
+- 创建一个命令接口，包含 execute() 和 undo() 方法；
+- 所有命令对象需实现命令接口，将自身方法封装在 execute() 中，比如电灯对象的打开电灯方法封装在 execute() 中，冰箱对象的打开冰箱方法封装在 execute() 中。用户不需要知道对象的方法是怎么运作的，只需要调用 execute() 方法即可；
+- 宏命令，是将一组命令对象放在数组中，然后遍历调用 execute() 方法。
+
+## 适配器模式
+　　有两个接口对象，通过适配器将一个接口对象转换成另一个期望的接口，本质上是封装不兼容对象的方法，即通过实现期望的接口，传入要被转换的对象，将被转换对象的方法封装一层期望接口的方法，这样通过期望接口的方法调用的是被转换对象的方法。如下，
+  
+- 有两个接口对象，枚举接口 Enumerattion 和 迭代接口 Iterator；
+- Enumerattion 接口有两个方法分别为 hasMoreElements() 和 nextElements()，Iterator 接口有三个方法分别为 hasNext()、next()、remove() 方法；
+- 适配器将不兼容的 Enumerattion 接口包装起来，兼容 Iterator 对象；
+- 构建一个适配器对象，实现 Iterator 接口，然后传入 Enumerattion 对象；
+- 实现 Iterator 接口的方法，hasNext() 里封装调用 Enumerattion 对象的 hasMoreElements() 方法，next() 里封装调用 Enumerattion 对象的 nextElements()，由于 Enumerattion 没有对应的 Iterator 接口的 remove() 方法，则抛出异常；
+
+## 外观模式（Facade Pattern）
+　　提供了一个统一的接口，用来访问子系统中的一群接口，它定义了一个高层接口，让子系统更容易使用。
+  
+- 新建一个类；
+- 将需要多个类的调用方法封装在一个类的方法中，比如将多个动作封装在一个动作方法中，进行调用。
 
 
 ### reference：
