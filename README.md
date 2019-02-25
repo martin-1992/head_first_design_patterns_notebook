@@ -66,7 +66,10 @@
 - 抽象类定义一个算法，包含多个方法步骤的调用；
 - 这些方法步骤中，不会变的部分作为超类中的通用方法，会变的部分作为超类中的抽象方法，交由子类实现；
 
+## 迭代器与组合模式（Iterator Pattern And Composite Pattern）
+
 - 
 
 ### reference：
-https://design-patterns.readthedocs.io/zh_CN/latest/read_uml.html
+https://design-patterns.readthedocs.io/zh_CN/latest/read_uml.html <br />
+https://quanke.gitbooks.io/design-pattern-java/
