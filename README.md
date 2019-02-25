@@ -66,9 +66,13 @@
 - 抽象类定义一个算法，包含多个方法步骤的调用；
 - 这些方法步骤中，不会变的部分作为超类中的通用方法，会变的部分作为超类中的抽象方法，交由子类实现；
 
-## 迭代器与组合模式（Iterator Pattern And Composite Pattern）
+## 迭代器模式（Iterator Pattern）
+　　将集合框架的使用方法使用一个通用接口封装，通过该接口的 hasNext()、next() 和 remove() 方法进行调用。
 
-- 
+- 定义迭代器接口，方法有 hasNext()、next() 和 remove()；
+- 实现迭代器接口，为具体迭代器，构造器传入集合框架，使用迭代器的方法封装传入集合框架的方法，比如迭代器接口 next() 方法封装数组的下标的使用等。
+
+## 组合模式（Composite Pattern）
 
 ### reference：
 https://design-patterns.readthedocs.io/zh_CN/latest/read_uml.html <br />
