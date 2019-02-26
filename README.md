@@ -74,6 +74,15 @@
 
 ## 组合模式（Composite Pattern）
 
+
+## 状态模式（State Pattern）
+　　状态模式是不用在 context 中放置许多条件判断的替代方案，通过将不同状态的行为封装进不同的状态对象中，使用 getter() 来获得状态对象，使用 setter() 对其进行状态转换。
+  
+- 定义一个接口或抽象类，如果没有通用方法，则定义为接口，有则定义为抽象类；
+- 继承实现该接口或抽象类，为状态类，将每个状态的行为局部到它自己的类中，并规定了状态的转换，比如没有放硬币到糖果机的状态，只能转换到投了硬币的糖果机的状态；
+- 状态间通过客户类（主体，构造器传入糖果机的引用）的 getter() 和 sette() 来进行状态转换。
+
+
 ### reference：
 https://design-patterns.readthedocs.io/zh_CN/latest/read_uml.html <br />
 https://quanke.gitbooks.io/design-pattern-java/
