@@ -9,7 +9,7 @@
 　　
   
 　　应用场景：Runnable 的 run 方法和 Thread 类本身的 run 方法，都是将线程的控制本身和业务逻辑的运行分离开来。 Runnable 接口的 run 方法，即业务逻辑，由我们自己实现，其他不会变化的部分，比如启动、结束线程这些，则由超类定义好。另外还用到了模板方法，启动流程的步骤都定义好，只要实现其中一部分细节，业务逻辑就可以。<br />
-  无论是 Runnable 的 run 方法，还是 Thread 类本身的 run 方法（事实上 Thread 类也是实现 Runnable 接口）都是想将线程的控制本身和业务逻辑的运行分离开来。
+　　无论是 Runnable 的 run 方法，还是 Thread 类本身的 run 方法（事实上 Thread 类也是实现 Runnable 接口）都是想将线程的控制本身和业务逻辑的运行分离开来。
 
 ### 观察者模式（Observer Pattern）
 　　当有最新消息时通知对象，JavaBeans、RMI、MVC 中都有用到观察者模式。
