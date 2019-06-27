@@ -71,7 +71,9 @@
 
 　　**应用场景：**
 - Thread 的 run 和 start 是一个典型的模板设计模式，父类编写算法结构代码，子类实现逻辑细节 run，即线程的启动步骤都由父类实现好了，按照顺序启动，只需实现步骤 run 方法的细节即可；
-- Netty 中的抽象类 SimpleInBoundHandler，在使用 channelRead 方法进行读数据中，只需实现抽象方法 channelRead0，而不需管处理消息后的内存释放，这在模板方法中已经定义好了。
+- Netty 中的抽象类 SimpleInBoundHandler，在使用 channelRead 方法进行读数据中，只需实现抽象方法 channelRead0，而不需管处理消息后的内存释放，这在模板方法中已经定义好了；
+- Tomcat 中的 [LifecycleBase](https://github.com/martin-1992/Tomcat-Notes/blob/master/LifeCycle/LifecycleBase.md) 类，为抽象基类，定义了关于生命周期的方法如 init()、start()、stop()、destroy() 等。以 init() 为例，该方法的流程是先进行生命周期状态转换，并检查是否有监听器监听该状态的事件，有则调用监听器。这些是在方法中定义的，子类只要继承该类，实现抽象方法 initInternal() 即可。
+
 
 ### 迭代器模式（Iterator Pattern）
 　　将集合框架的使用方法使用一个通用接口封装，通过该接口的 hasNext()、next() 和 remove() 方法进行调用。
